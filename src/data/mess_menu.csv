@@ -1,0 +1,25 @@
+Meal,Item,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday
+Breakfast,Main,Aloo onion paratha,Poori Chana,Mix Paratha,Idli,Uttapam,Methi/Palak paratha,Masala Onion Dosa
+Breakfast,Side 1,Chutney,Halwa,Dhaniya Chutney,Sambhar & chutney,Sambhar,Aloo Tamatar Sabji,Sambhar
+Breakfast,Side 2,,,,,,,Coconut Chutney
+Breakfast,Fruit/Protein,Fruits/ 2 Eggs,Fruits/ 2 Eggs,Fruits/ 2 Eggs,Fruits/ 2 Eggs,Fruits/ 2 Omlette,2 Banana/ 2 Eggs,
+Breakfast,Milk,Milk (200 ml),Daliya/Milk (200 ml),Milk (200 ml),Daliya/Milk (200 ml),Daliya/Milk (200 ml),Milk (200 ml),Daliya/Milk (200 ml)
+Breakfast,Bread,Bread (4 slices),Bread (4 slices),Bread (4 slices),Bread (4 slices),Bread (4 slices),Bread (4 slices),Bread (4 slices)
+Breakfast,Spread,Butter&Jam,Butter&Jam,Butter&Jam,Butter&Jam,Butter&Jam,Butter&Jam,Butter&Jam
+Breakfast,Beverage,Cornflakes/Coffee Powder/ Tea bags/Bournvita,Coffee Powder/ Tea bags/Bournvita,Cornflakes/Coffee Powder/ Tea bags/Bournvita,Coffee Powder/ Tea bags/Bournvita,Coffee Powder/ Tea bags/Bournvita,Cornflakes/Coffee Powder/ Tea bags/Bournvita,Cornflakes/Coffee Powder/ Tea bags/Bournvita
+Breakfast,Sprouts,Sprouts(Black Chana+Moong),Sprouts(Black Chana+Moong),Sprouts(Black Chana+Moong),Sprouts(Black Chana+Moong),Sprouts(Black Chana+Moong),Sprouts(Black Chana+Moong),Sprouts(Black Chana+Moong)
+Lunch,Main 1,Rajma,Mix Dal,Kadhi Pakora,Sitalfal,Aloo Gazar Gobhi,"Dry Paneer Bhurji, Egg Bhurji",Bhature
+Lunch,Main 2,Cabbage-Matar,Veg Kofta,Aloo Zeera,White Chole,Moong Masoor Dal,Chana Dal,Chole
+Lunch,Main 3,Jeera Rice,,Masala Papad/Fryums,Poori,Rice,,Green Chutney
+Lunch,Bread,Roti,Roti,Roti,Massala Chaach,Roti,Roti,Fried Masala
+Lunch,Rice,Rice,Rice,Jeera Rice,Rice,Rice,Rice,Khichdi
+Lunch,Dairy,Curd,,Bundi Raita,,,,Butter Milk
+Lunch,Salad,Green Salad,Green Salad,Green Salad,Green Salad,Green Salad,Green Salad,Salad
+Lunch,Accompaniment,Lemon + Pickle,Lemon + Pickle,Lemon + Pickle,Lemon + Pickle,Lemon + Pickle,Lemon + Pickle,Lemon + Pickle
+Dinner,Main 1,Sarson Ka Saag,Lauki Chana,Paneer Do Pyaza/Chicken Curry,Mix Veg (gajar+paneer or Mushroom+bean+gobi+tomat),Palak Paneer/Egg Curry,Aloo Matar,Paneer Biryani/Chicken Biryani
+Dinner,Main 2,Dal Tadka,Dal Makhni,Dal Fry,Black Masoor dal,Roongi Dal,Arher Dal,Aloo soyabean
+Dinner,Dessert,Rice Kheer,Motichur Laddu,Sooji Ka Halwa,Gulab Jamun / White Rasgulla,Balushahi,Garam Sewayi,Veg.- Raita
+Dinner,Roti,Roti,Roti,Roti,Roti,Roti,Roti,Ice-Cream / Gajar Ka Halwa
+Dinner,Rice,Rice,Rice,Rice,Rice,Rice,Rice,Rice
+Dinner,Salad,Green Salad,Green Salad,Green Salad,Green Salad,Green Salad,Green Salad,Green Salad
+Dinner,Accompaniment,Lemon + Pickle,Lemon + Pickle,Lemon + Pickle,Lemon + Pickle,Lemon + Pickle,Lemon + Pickle,Lemon + Pickle

@@ -1,23 +1,35 @@
 import { z } from 'zod';
 
-export const nutrientProfileSchema = z.object({
+export const nutritionProfileSchema = z.object({
   calories: z.number().nonnegative(),
-  proteinG: z.number().nonnegative(),
-  carbsG: z.number().nonnegative(),
-  fatG: z.number().nonnegative(),
-  fiberG: z.number().nonnegative(),
-  ironMg: z.number().nonnegative(),
-  calciumMg: z.number().nonnegative(),
-  vitaminB12Mcg: z.number().nonnegative(),
+  protein: z.number().nonnegative(),
+  fat: z.number().nonnegative(),
+  carbohydrates: z.number().nonnegative(),
+  fiber: z.number().nonnegative(),
+  sugar: z.number().nonnegative(),
+  iron: z.number().nonnegative(),
+  calcium: z.number().nonnegative(),
+  vitaminC: z.number().nonnegative(),
+  vitaminA: z.number().nonnegative(),
+  potassium: z.number().nonnegative(),
+  sodium: z.number().nonnegative(),
+  glycemicIndex: z.number().nonnegative(),
+});
+
+export const mealSchema = z.object({
+  foodId: z.string().min(1),
+  quantity: z.number().positive(),
 });
 
 export const mealLogSchema = z.object({
   id: z.string().min(1),
-  uid: z.string().min(1),
-  collegeId: z.string().min(1),
-  messId: z.string().min(1),
+  userId: z.string().min(1),
+  instituteId: z.string().min(1),
   date: z.string().min(1),
   mealType: z.enum(['breakfast', 'lunch', 'dinner']),
-  selectedItemIds: z.array(z.string()),
-  source: z.literal('menu'),
+  meals: z.array(mealSchema),
+  nutrition: nutritionProfileSchema,
+  sourceMenuId: z.string().optional(),
+  createdAt: z.string(),
+  updatedAt: z.string(),
 });

@@ -8,7 +8,7 @@ import { firestoreDb } from '@/services/firebase/firestore';
 export const collegesRepository = {
   async listActiveColleges(): Promise<ServiceResult<College[]>> {
     try {
-      const collegesQuery = query(collection(firestoreDb, collectionNames.colleges), where('active', '==', true));
+      const collegesQuery = query(collection(firestoreDb,collectionNames.institutes), where('active', '==', true));
       const snapshot = await getDocs(collegesQuery);
 
       return {

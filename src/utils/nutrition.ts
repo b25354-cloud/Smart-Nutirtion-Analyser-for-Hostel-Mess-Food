@@ -1,27 +1,39 @@
-import type { NutrientProfile } from '@/types';
+import type { NutritionProfile } from '@/types';
 
-const ZERO_NUTRIENTS: NutrientProfile = {
+const ZERO_NUTRIENTS: NutritionProfile = {
   calories: 0,
-  proteinG: 0,
-  carbsG: 0,
-  fatG: 0,
-  fiberG: 0,
-  ironMg: 0,
-  calciumMg: 0,
-  vitaminB12Mcg: 0,
+  protein: 0,
+  fat: 0,
+  carbohydrates: 0,
+  fiber: 0,
+  sugar: 0,
+  iron: 0,
+  calcium: 0,
+  vitaminC: 0,
+  vitaminA: 0,
+  potassium: 0,
+  sodium: 0,
+  glycemicIndex: 0,
 };
 
-export const aggregateNutrients = (profiles: NutrientProfile[]): NutrientProfile =>
+export const aggregateNutrients = (
+  profiles: NutritionProfile[],
+): NutritionProfile =>
   profiles.reduce(
-    (acc, profile) => ({
-      calories: acc.calories + profile.calories,
-      proteinG: acc.proteinG + profile.proteinG,
-      carbsG: acc.carbsG + profile.carbsG,
-      fatG: acc.fatG + profile.fatG,
-      fiberG: acc.fiberG + profile.fiberG,
-      ironMg: acc.ironMg + profile.ironMg,
-      calciumMg: acc.calciumMg + profile.calciumMg,
-      vitaminB12Mcg: acc.vitaminB12Mcg + profile.vitaminB12Mcg,
+    (acc, p) => ({
+      calories: acc.calories + p.calories,
+      protein: acc.protein + p.protein,
+      fat: acc.fat + p.fat,
+      carbohydrates: acc.carbohydrates + p.carbohydrates,
+      fiber: acc.fiber + p.fiber,
+      sugar: acc.sugar + p.sugar,
+      iron: acc.iron + p.iron,
+      calcium: acc.calcium + p.calcium,
+      vitaminC: acc.vitaminC + p.vitaminC,
+      vitaminA: acc.vitaminA + p.vitaminA,
+      potassium: acc.potassium + p.potassium,
+      sodium: acc.sodium + p.sodium,
+      glycemicIndex: acc.glycemicIndex + p.glycemicIndex,
     }),
     ZERO_NUTRIENTS,
   );
