@@ -2,84 +2,115 @@ export type UserRole = 'student' | 'admin' | 'mess_manager';
 
 export type MealType = 'breakfast' | 'lunch' | 'dinner';
 
-export interface College {
+export type NutritionPeriod = 'daily' | 'weekly' | 'monthly';
+
+export type InstituteCode = 'iit_mandi' | 'iit_delhi' | 'nit_trichy' | (string & {});
+
+export interface Institute {
   id: string;
-  code: string;
+  code: InstituteCode;
   name: string;
   timezone: string;
   active: boolean;
+  createdAt: string;
+  updatedAt: string;
 }
 
-export interface Hostel {
+export interface User {
   id: string;
-  collegeId: string;
-  messId: string;
-  name: string;
-}
-
-export interface Mess {
-  id: string;
-  collegeId: string;
-  hostelId: string;
-  name: string;
-}
-
-export interface NutrientProfile {
-  calories: number;
-  proteinG: number;
-  carbsG: number;
-  fatG: number;
-  fiberG: number;
-  ironMg: number;
-  calciumMg: number;
-  vitaminB12Mcg: number;
-}
-
-export interface UserProfile {
-  uid: string;
   email: string | null;
   displayName: string | null;
-  collegeId: string;
+  instituteId: string;
   role: UserRole;
   hostelId?: string;
   dietaryPreferences?: string[];
+  nutritionGoals?: NutritionGoal;
+  createdAt: string;
+  updatedAt: string;
 }
 
-export interface FoodItem {
+export interface NutritionSource {
+  source: string;
+  sourceId?: string;
+  version?: string;
+  verifiedAt?: string;
+}
+
+export interface NutritionProfile {
+  calories: number;
+  protein: number;
+  fat: number;
+  carbohydrates: number;
+  fiber: number;
+  sugar: number;
+  iron: number;
+  calcium: number;
+  vitaminC: number;
+  vitaminA: number;
+  potassium: number;
+  sodium: number;
+  glycemicIndex: number;
+}
+
+export interface Food {
   id: string;
-  collegeId: string;
+  instituteId?: string;
   name: string;
+  aliases: string[];
   category: string;
-  servingSize: string;
-  nutrients: NutrientProfile;
+  servingSize: number;
+  servingUnit: string;
+  nutrition: NutritionProfile;
+  source: NutritionSource;
+  createdAt: string;
+  updatedAt: string;
 }
 
-export interface MenuMeal {
-  mealType: MealType;
-  items: FoodItem[];
+export interface Meal {
+  foodId: string;
+  quantity: number;
 }
 
-export interface MessMenu {
+export interface DailyMenu {
   id: string;
-  collegeId: string;
-  messId: string;
+  instituteId: string;
   date: string;
-  meals: MenuMeal[];
+  breakfast: Meal[];
+  lunch: Meal[];
+  dinner: Meal[];
+  createdBy: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface MealLog {
   id: string;
-  uid: string;
-  collegeId: string;
-  messId: string;
+  userId: string;
+  instituteId: string;
   date: string;
   mealType: MealType;
-  selectedItemIds: string[];
-  source: 'menu';
+  meals: Meal[];
+  nutrition: NutritionProfile;
+  sourceMenuId?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface NutritionGoal {
+  calories: number;
+  protein: number;
+  fat: number;
+  carbohydrates: number;
+  fiber: number;
+  iron: number;
+  calcium: number;
+  vitaminC: number;
+  sodium: number;
+  potassium: number;
 }
 
 export interface NutritionGap {
-  nutrient: keyof NutrientProfile;
+  nutrient: keyof NutritionProfile;
   target: number;
   actual: number;
   deficit: number;
@@ -90,6 +121,36 @@ export interface NutritionScore {
   grade: 'A' | 'B' | 'C' | 'D' | 'E';
 }
 
+export interface NutritionSummary {
+  id: string;
+  userId: string;
+  instituteId: string;
+  period: NutritionPeriod;
+  startDate: string;
+  endDate: string;
+  totals: NutritionProfile;
+  score: NutritionScore;
+  gaps: NutritionGap[];
+  generatedAt: string;
+}
+
+export interface ChatMessage {
+  id: string;
+  role: 'system' | 'user' | 'assistant';
+  content: string;
+  createdAt: string;
+}
+
+export interface ChatHistory {
+  id: string;
+  userId: string;
+  instituteId: string;
+  messages: ChatMessage[];
+  contextSummaryIds: string[];
+  createdAt: string;
+  updatedAt: string;
+}
+
 export interface Suggestion {
   id: string;
   title: string;
@@ -97,31 +158,28 @@ export interface Suggestion {
   affordabilityRank: number;
 }
 
-export interface DailyNutritionSummary {
-  id: string;
-  uid: string;
-  collegeId: string;
-  date: string;
-  totals: NutrientProfile;
-  score: NutritionScore;
-  gaps: NutritionGap[];
-}
-
-export interface WeeklyNutritionTrend {
-  id: string;
-  uid: string;
-  collegeId: string;
-  weekStart: string;
-  scores: Array<{ date: string; score: number }>;
-  recurringGaps: NutritionGap[];
-}
-
 export interface AIInsight {
   id: string;
-  uid: string;
-  collegeId: string;
-  dateRangeKey: string;
+  userId: string;
+  instituteId: string;
+  period: NutritionPeriod;
   summary: string;
   suggestions: Suggestion[];
   generatedAt: string;
+}
+
+// Backward compatible aliases for existing scaffold code.
+export type College = Institute;
+export type UserProfile = User;
+export type FoodItem = Food;
+export type MessMenu = DailyMenu;
+export type DailyNutritionSummary = NutritionSummary;
+
+export interface WeeklyNutritionTrend {
+  id: string;
+  userId: string;
+  instituteId: string;
+  weekStart: string;
+  scores: Array<{ date: string; score: number }>;
+  recurringGaps: NutritionGap[];
 }

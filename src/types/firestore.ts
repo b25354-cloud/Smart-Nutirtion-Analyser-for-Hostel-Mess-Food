@@ -1,21 +1,22 @@
 export const collectionNames = {
-  colleges: 'colleges',
+  institutes: 'institutes',
   users: 'users',
-  hostels: 'hostels',
-  messes: 'messes',
-  menus: 'menus',
-  foodItems: 'foodItems',
+  foods: 'foods',
+  dailyMenus: 'dailyMenus',
   mealLogs: 'mealLogs',
-  dailyNutrition: 'dailyNutrition',
-  weeklyNutrition: 'weeklyNutrition',
-  aiInsights: 'aiInsights',
+  nutritionHistory: 'nutritionHistory',
+  chatHistory: 'chatHistory',
 } as const;
 
 export type CollectionName = (typeof collectionNames)[keyof typeof collectionNames];
 
+export const supportedInstituteIds = ['iit_mandi', 'iit_delhi', 'nit_trichy'] as const;
+
+export type SupportedInstituteId = (typeof supportedInstituteIds)[number];
+
 export const firestoreKeyStrategies = {
-  dailyNutrition: 'uid_yyyy-mm-dd',
-  weeklyNutrition: 'uid_weekStartDate',
-  menu: 'collegeId_messId_yyyy-mm-dd',
-  mealLog: 'auto-id with uid+date indexed fields',
+  dailyMenu: 'instituteId_yyyy-mm-dd',
+  mealLog: 'auto-id with userId+date+mealType fields indexed',
+  nutritionSummary: 'userId_period_yyyy-mm-dd',
+  chatHistory: 'auto-id with userId indexed',
 } as const;

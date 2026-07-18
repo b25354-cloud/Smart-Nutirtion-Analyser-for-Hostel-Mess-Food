@@ -1,2 +1,1 @@
-// Module hooks scaffold
-export {};
+export * from './useAuthContext';
