@@ -6,6 +6,7 @@ import { RoleRoute } from '@/app/router/guards/RoleRoute';
 import { AdminLayout } from '@/app/router/layouts/AdminLayout';
 import { AppLayout } from '@/app/router/layouts/AppLayout';
 import { PublicLayout } from '@/app/router/layouts/PublicLayout';
+import { LandingPage } from '@/app/router/pages/LandingPage';
 import { NotFoundPage } from '@/app/router/pages/NotFoundPage';
 import { RouteStubPage } from '@/app/router/pages/RouteStubPage';
 import { adminRouteTree, appRouteTree } from '@/app/router/routeTree';
@@ -15,7 +16,7 @@ const router = createBrowserRouter([
     path: ROUTES.home,
     element: <PublicLayout />,
     children: [
-      { index: true, element: <RouteStubPage title="MessMate AI" description="Public landing shell." /> },
+      { index: true, element: <LandingPage /> },
       { path: ROUTES.auth, element: <RouteStubPage title="Authentication" description="Firebase auth flow scaffold." /> },
     ],
   },

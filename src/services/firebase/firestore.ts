@@ -1,5 +1,1 @@
-import { getFirestore } from 'firebase/firestore';
-
-import { firebaseApp } from '@/services/firebase/config';
-
-export const firestoreDb = getFirestore(firebaseApp);
+export { firestoreDb } from '@/firebase';
