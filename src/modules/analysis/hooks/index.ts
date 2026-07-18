@@ -1,0 +1,2 @@
+// Module hooks scaffold
+export {};
