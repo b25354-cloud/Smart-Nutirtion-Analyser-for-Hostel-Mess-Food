@@ -1,19 +1,17 @@
 import {
   GoogleAuthProvider,
+  type User,
   onAuthStateChanged,
   signInWithPopup,
   signOut,
-  type User,
-  getAuth,
 } from 'firebase/auth';
 
-import { firebaseApp } from '@/services/firebase/config';
+import { firebaseAuth } from '@/firebase';
 
-const auth = getAuth(firebaseApp);
 const googleProvider = new GoogleAuthProvider();
 
-export const observeAuthState = (onChange: (user: User | null) => void) => onAuthStateChanged(auth, onChange);
+export const observeAuthState = (onChange: (user: User | null) => void) => onAuthStateChanged(firebaseAuth, onChange);
 
-export const signInWithGoogle = async () => signInWithPopup(auth, googleProvider);
+export const signInWithGoogle = async () => signInWithPopup(firebaseAuth, googleProvider);
 
-export const signOutUser = async () => signOut(auth);
+export const signOutUser = async () => signOut(firebaseAuth);
