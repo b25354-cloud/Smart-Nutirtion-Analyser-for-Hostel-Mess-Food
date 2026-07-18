@@ -1,0 +1,2 @@
+// Module types scaffold
+export {};
