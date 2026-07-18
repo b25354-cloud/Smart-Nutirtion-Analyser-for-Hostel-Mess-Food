@@ -12,6 +12,7 @@ import { RouteStubPage } from '@/app/router/pages/RouteStubPage';
 import { adminRouteTree, appRouteTree } from '@/app/router/routeTree';
 import AdminMenuPage from "@/modules/mess-menu/pages/AdminMenuPage";
 import StudentTrackerPage from "@/modules/tracking/pages/StudentTrackerPage";
+import StudentDashboardPage from "@/pages/StudentDashboard";
 
 const router = createBrowserRouter([
   {
@@ -31,15 +32,17 @@ const router = createBrowserRouter([
         children: appRouteTree.map((route) => ({
           path: route.path,
           element:
-            route.path === APP_ROUTES.tracking ? (
+            route.path === APP_ROUTES.dashboard ? (
+              <StudentDashboardPage />
+            ) : route.path === APP_ROUTES.tracking ? (
               <StudentTrackerPage />
             ) : (
               <RouteStubPage
                 title={route.title}
                 description="Protected route scaffold."
-                />
+              />
             ),
-    })),
+        })),
       },
       {
         element: <RoleRoute allowedRoles={['admin', 'mess_manager']} />,

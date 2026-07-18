@@ -1,5 +1,9 @@
 import { Outlet } from "react-router-dom";
 
-export const RoleRoute = () => {
+interface RoleRouteProps {
+  allowedRoles: string[];
+}
+
+export const RoleRoute = ({ allowedRoles: _allowedRoles }: RoleRouteProps) => {
   return <Outlet />;
 };

@@ -18,13 +18,9 @@ export interface Institute {
 
 export interface User {
   id: string;
-  email: string | null;
-  displayName: string | null;
-  instituteId: string;
-  role: UserRole;
-  hostelId?: string;
-  dietaryPreferences?: string[];
-  nutritionGoals?: NutritionGoal;
+  name: string;
+  rollNo: string;
+  email: string;
   createdAt: string;
   updatedAt: string;
 }

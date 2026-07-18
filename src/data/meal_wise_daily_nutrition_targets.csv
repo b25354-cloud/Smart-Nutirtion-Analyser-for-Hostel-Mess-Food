@@ -1,0 +1,37 @@
+meal,target_type,nutrient,target_value,unit,notes,source
+daily,daily_target,calories_kcal,2200,kcal,General adult reference value; individual needs vary,WHO healthy diet guidance
+daily,daily_target,protein_g,55,g,General adult educational benchmark; exact need varies by body weight and group,ICMR-NIN RDA/EAR 2020
+daily,daily_limit,fat_g_max,73,g,Approximate upper benchmark at 30% of 2200 kcal,WHO healthy diet guidance
+daily,daily_target,fiber_g_min,25,g,Minimum naturally occurring dietary fibre for adults and children over 10 years,WHO healthy diet guidance
+daily,daily_target,iron_mg,14,mg,General adult educational benchmark; sex/age-specific requirements vary,ICMR-NIN RDA/EAR 2020
+daily,daily_target,calcium_mg,1000,mg,General adult benchmark,ICMR-NIN RDA/EAR 2020
+daily,daily_target,vitaminC_mg,65,mg,General adult benchmark; population-specific values may vary,ICMR-NIN RDA/EAR 2020
+daily,daily_target,vitaminA_ug,600,µg RAE,General adult benchmark; population-specific values may vary,ICMR-NIN RDA/EAR 2020
+daily,daily_target,potassium_mg,3500,mg,Educational benchmark; not an individualized prescription,General healthy-diet benchmark
+daily,daily_limit,sodium_mg_max,2000,mg,WHO recommends less than 2000 mg sodium/day for adults,WHO sodium reduction
+daily,daily_limit,free_sugar_g_max,50,g,Less than 10% of energy on a 2000 kcal reference diet,WHO healthy diet guidance
+daily,daily_target,fruit_vegetable_g_min,400,g,At least 400 g/day for people older than 10 years,WHO healthy diet guidance
+breakfast,meal_share,calories_kcal,25,% of daily target,"Planning allocation, not a clinical requirement",App allocation based on a 3-meal pattern
+breakfast,meal_share,protein_g,25,% of daily target,Planning allocation,App allocation based on a 3-meal pattern
+breakfast,meal_share,fiber_g,25,% of daily target,Planning allocation,App allocation based on a 3-meal pattern
+breakfast,meal_share,iron_mg,25,% of daily target,Planning allocation,App allocation based on a 3-meal pattern
+breakfast,meal_share,calcium_mg,30,% of daily target,Planning allocation,App allocation based on a 3-meal pattern
+breakfast,meal_share,vitaminC_mg,25,% of daily target,Planning allocation,App allocation based on a 3-meal pattern
+breakfast,meal_share,vitaminA_ug,25,% of daily target,Planning allocation,App allocation based on a 3-meal pattern
+breakfast,meal_share,potassium_mg,25,% of daily target,Planning allocation,App allocation based on a 3-meal pattern
+lunch,meal_share,calories_kcal,35,% of daily target,Planning allocation,App allocation based on a 3-meal pattern
+lunch,meal_share,protein_g,35,% of daily target,Planning allocation,App allocation based on a 3-meal pattern
+lunch,meal_share,fiber_g,35,% of daily target,Planning allocation,App allocation based on a 3-meal pattern
+lunch,meal_share,iron_mg,35,% of daily target,Planning allocation,App allocation based on a 3-meal pattern
+lunch,meal_share,calcium_mg,30,% of daily target,Planning allocation,App allocation based on a 3-meal pattern
+lunch,meal_share,vitaminC_mg,35,% of daily target,Planning allocation,App allocation based on a 3-meal pattern
+lunch,meal_share,vitaminA_ug,35,% of daily target,Planning allocation,App allocation based on a 3-meal pattern
+lunch,meal_share,potassium_mg,35,% of daily target,Planning allocation,App allocation based on a 3-meal pattern
+dinner,meal_share,calories_kcal,30,% of daily target,Planning allocation,App allocation based on a 3-meal pattern
+dinner,meal_share,protein_g,30,% of daily target,Planning allocation,App allocation based on a 3-meal pattern
+dinner,meal_share,fiber_g,30,% of daily target,Planning allocation,App allocation based on a 3-meal pattern
+dinner,meal_share,iron_mg,30,% of daily target,Planning allocation,App allocation based on a 3-meal pattern
+dinner,meal_share,calcium_mg,30,% of daily target,Planning allocation,App allocation based on a 3-meal pattern
+dinner,meal_share,vitaminC_mg,30,% of daily target,Planning allocation,App allocation based on a 3-meal pattern
+dinner,meal_share,vitaminA_ug,30,% of daily target,Planning allocation,App allocation based on a 3-meal pattern
+dinner,meal_share,potassium_mg,30,% of daily target,Planning allocation,App allocation based on a 3-meal pattern
