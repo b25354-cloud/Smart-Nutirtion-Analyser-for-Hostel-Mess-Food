@@ -65,3 +65,20 @@ Return ONLY 3-5 bullet points.
 No introduction.
 `;
 }
+
+export const generateDailyAnalysisPrompt = (nutrition: any, remaining: any, todayMeals: any[]) => {
+  const consumedItems = todayMeals.map((m: any) => m.food?.name || "item").join(", ");
+  
+  return `
+    Analyze this student's nutrition intake today:
+    Consumed: ${JSON.stringify(nutrition)}
+    Still Needed: ${JSON.stringify(remaining)}
+    Foods Eaten: ${consumedItems}
+    
+    Provide a concise, hostel-friendly response in these sections:
+    1. Analysis: What was eaten well and what is lacking?
+    2. Suggestion: What should they prioritize for the next meal in the mess?
+    3. Advice: A simple, actionable health tip.
+    Keep it encouraging and professional.
+  `;
+};

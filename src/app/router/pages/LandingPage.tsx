@@ -1,26 +1,25 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-
-import { APP_ROUTES, ROUTES } from '@/app/router/constants';
+import { ROUTES } from '@/app/router/constants';
 import { Card } from '@/components/common';
 
 const features = [
   {
     title: 'Mess-first Tracking',
-    description: 'Select meals directly from hostel menu plans with no manual ingredient entry.',
+    description: 'Select your meals directly from the hostel menu with no manual ingredient entry needed.',
   },
   {
     title: 'Nutrition Insights',
-    description: 'Get clean daily overviews with score placeholders ready for future analytics.',
+    description: 'Get clean daily overviews of your calorie and nutrient intake to maintain a balanced diet.',
   },
   {
-    title: 'Multi-college Ready',
-    description: 'Architecture supports college-scoped data, users, menus, and insights from day one.',
+    title: 'Personalized AI Coach',
+    description: 'Receive customized dietary suggestions tailored to your campus lifestyle and goals.',
   },
 ] as const;
 
 export const LandingPage = () => (
-  <section className="mx-auto flex w-full max-w-6xl flex-col gap-12 py-8 sm:py-16">
+  <section className="mx-auto flex w-full max-w-6xl flex-col gap-12 py-8 sm:py-16 px-4">
     <motion.header
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
@@ -31,27 +30,20 @@ export const LandingPage = () => (
       <div className="absolute -bottom-20 left-1/3 h-48 w-48 rounded-full bg-success/20 blur-3xl" />
       <div className="relative space-y-6">
         <p className="inline-flex rounded-full bg-surface-muted px-4 py-1 text-sm text-text-secondary">
-          Smart Nutrition Analyzer for Hostel &amp; Mess Food
+          Smart Nutrition Analyzer for Hostel Food
         </p>
         <h1 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-          MessMate AI helps students understand diet quality from real mess meals.
+          Understand your diet quality directly from real mess meals.
         </h1>
         <p className="max-w-2xl text-lg text-text-secondary">
-          Production-ready UI shell and routing are wired. Nutrition logic, scoring engines, and AI reasoning remain
-          typed stubs by design.
+          Track what you eat at the hostel mess, discover your nutritional gaps, and make healthier choices without the hassle of manual calorie counting.
         </p>
         <div className="flex flex-wrap gap-3">
           <Link
-            to={APP_ROUTES.dashboard}
+            to={ROUTES.auth}
             className="rounded-lg bg-primary px-5 py-2.5 font-medium text-white transition hover:opacity-90"
           >
-            Enter App Shell
-          </Link>
-          <Link
-            to={ROUTES.auth}
-            className="rounded-lg border border-border bg-surface px-5 py-2.5 font-medium text-text-primary transition hover:bg-surface-muted"
-          >
-            Auth Flow Stub
+            Login / Sign Up
           </Link>
         </div>
       </div>

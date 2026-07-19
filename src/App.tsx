@@ -1,8 +1,11 @@
-import { AppProviders } from '@/app/providers/AppProviders';
-import { AppRouter } from '@/router';
+// src/App.tsx
+import { AuthProvider } from "@/context/AuthContext";
+import { AppRouter } from "@/app/router"; // Or whatever file exports your router
 
-export const App = () => (
-  <AppProviders>
-    <AppRouter />
-  </AppProviders>
-);
+export default function App() {
+  return (
+    <AuthProvider>
+      <AppRouter />
+    </AuthProvider>
+  );
+}

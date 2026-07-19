@@ -4,33 +4,25 @@ import {
   useEffect,
   useState,
 } from "react";
-
 import type { ReactNode } from "react";
-
-import {
-  onAuthStateChanged,
-} from "firebase/auth";
-
+// 1. ADD 'User' TO THIS IMPORT
+import { onAuthStateChanged } from "firebase/auth";
+import type { User } from "firebase/auth";
 import { firebaseAuth } from "@/firebase";
 
+// 2. SIMPLIFY THE CONTEXT TYPE
 interface AuthContextType {
-  user: ReturnType<typeof onAuthStateChanged> extends any
-    ? typeof firebaseAuth.currentUser
-    : null;
+  user: User | null;
   loading: boolean;
 }
+
 const AuthContext = createContext<AuthContextType>({
   user: null,
   loading: true,
 });
 
-export function AuthProvider({
-  children,
-}: {
-  children: ReactNode;
-}) {
+export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
-
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -42,16 +34,11 @@ export function AuthProvider({
       }
     );
 
-    return unsubscribe;
+    return unsubscribe; // This is correct
   }, []);
 
   return (
-    <AuthContext.Provider
-      value={{
-        user,
-        loading,
-      }}
-    >
+    <AuthContext.Provider value={{ user, loading }}>
       {children}
     </AuthContext.Provider>
   );

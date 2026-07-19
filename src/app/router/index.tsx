@@ -7,20 +7,23 @@ import { AdminLayout } from '@/app/router/layouts/AdminLayout';
 import { AppLayout } from '@/app/router/layouts/AppLayout';
 import { PublicLayout } from '@/app/router/layouts/PublicLayout';
 import { LandingPage } from '@/app/router/pages/LandingPage';
+import { LoginPage } from '@/app/router/pages/LoginPage'; // <-- Added import
 import { NotFoundPage } from '@/app/router/pages/NotFoundPage';
 import { RouteStubPage } from '@/app/router/pages/RouteStubPage';
 import { adminRouteTree, appRouteTree } from '@/app/router/routeTree';
 import AdminMenuPage from "@/modules/mess-menu/pages/AdminMenuPage";
 import StudentTrackerPage from "@/modules/tracking/pages/StudentTrackerPage";
 import StudentDashboardPage from "@/pages/StudentDashboard";
-
+import { ProfilePage } from '@/app/router/pages/ProfilePage';
+import DailyAnalysisPage from "@/pages/DailyAnalysisPage"; // Adjust the path if it's in a different folder
 const router = createBrowserRouter([
   {
     path: ROUTES.home,
     element: <PublicLayout />,
     children: [
       { index: true, element: <LandingPage /> },
-      { path: ROUTES.auth, element: <RouteStubPage title="Authentication" description="Firebase auth flow scaffold." /> },
+      // <-- Replaced the Auth stub with the actual LoginPage
+      { path: ROUTES.auth, element: <LoginPage /> }, 
     ],
   },
   {
@@ -36,6 +39,10 @@ const router = createBrowserRouter([
               <StudentDashboardPage />
             ) : route.path === APP_ROUTES.tracking ? (
               <StudentTrackerPage />
+            ) : route.path === APP_ROUTES.profile ? (
+              <ProfilePage /> // <-- ADDED THE PROFILE PAGE HERE
+            ) : route.path === APP_ROUTES.daily ? ( // <-- ADD THIS BLOCK
+              <DailyAnalysisPage />
             ) : (
               <RouteStubPage
                 title={route.title}

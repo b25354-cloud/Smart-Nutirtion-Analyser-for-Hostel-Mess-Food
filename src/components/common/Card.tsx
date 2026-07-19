@@ -1,5 +1,11 @@
 import type { PropsWithChildren } from 'react';
 
-export const Card = ({ children }: PropsWithChildren) => (
-  <div className="rounded-xl border border-border bg-surface-elevated p-4 shadow-sm">{children}</div>
+interface CardProps extends PropsWithChildren {
+  className?: string;
+}
+
+export const Card = ({ children, className = '' }: CardProps) => (
+  <div className={`rounded-xl border border-border bg-surface-elevated p-4 shadow-sm ${className}`}>
+    {children}
+  </div>
 );

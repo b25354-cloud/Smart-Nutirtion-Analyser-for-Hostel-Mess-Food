@@ -1,6 +1,7 @@
 interface MealTimelineProps {
   meals: {
-    meal: string;
+    meal?: string;
+    mealType?: string;
     calories?: number;
   }[];
 }
@@ -37,9 +38,10 @@ export default function MealTimeline({
 
         {mealConfig.map((mealItem, index) => {
 
+          // Robust check: Looks for meal OR mealType safely
           const loggedMeal = meals.find(
             (m) =>
-              m.meal.toLowerCase() ===
+              (m.meal || m.mealType || "").toLowerCase() ===
               mealItem.key.toLowerCase()
           );
 
@@ -126,7 +128,7 @@ export default function MealTimeline({
             className="bg-green-500 h-3 rounded-full transition-all duration-700"
             style={{
               width: `${
-                (meals.length / mealConfig.length) * 100
+                (meals.length > 0 ? new Set(meals.map(m => m.meal || m.mealType)).size : 0 / mealConfig.length) * 100
               }%`,
             }}
           />
@@ -134,7 +136,7 @@ export default function MealTimeline({
         </div>
 
         <div className="mt-2 text-center text-sm text-gray-500">
-          {meals.length} of {mealConfig.length} meals logged today
+          {meals.length > 0 ? new Set(meals.map(m => m.meal || m.mealType)).size : 0} of {mealConfig.length} meals logged today
         </div>
 
       </div>
