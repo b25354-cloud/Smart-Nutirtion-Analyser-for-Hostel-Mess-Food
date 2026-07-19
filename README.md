@@ -1,21 +1,85 @@
-# MessMate AI
+# Smart Nutrition Analyser for Hostel Mess Food (MessMate AI)
 
-Production-ready architecture scaffold for a multi-college smart nutrition analyzer focused on hostel and mess food.
+A TypeScript-first React application scaffold for analyzing hostel/mess food nutrition across multiple colleges.  
+This repository currently provides architecture, routing, services, state management, and UI foundations for future feature development.
+
+## Live Demo
+[https://smart-nutirtion-analyser-for-hostel.vercel.app](https://smart-nutirtion-analyser-for-hostel.vercel.app)
+
+---
 
 ## Tech Stack
 
-- React + Vite + TypeScript
-- Tailwind CSS + design tokens
-- Firebase Authentication + Firestore
-- Gemini API client scaffold
-- Recharts wrappers
-- React Router route tree + guards
-- React Hook Form wrappers
-- Framer Motion tokenized transitions
-- Zustand + TanStack Query state strategy
-- Zod runtime validation stubs
+- **Frontend:** React 19 + Vite + TypeScript
+- **Styling:** Tailwind CSS (design tokens based)
+- **Auth & Data Layer:** Firebase Authentication + Firestore (scaffold)
+- **AI Integration (Scaffold):** Gemini API client structure
+- **Charts:** Recharts
+- **Routing:** React Router (route tree + guards)
+- **Forms:** React Hook Form
+- **Validation:** Zod
+- **State Management:** Zustand + TanStack Query
+- **Motion:** Framer Motion
 
-## Quick Start
+---
+
+## Project Status
+
+This project is in a **scaffold/foundation phase**.
+
+It includes:
+- App architecture and modular folder organization
+- Route structure and route guards
+- Firestore schema guidance and type scaffolding
+- Service boundaries and repository stubs
+- Shared UI/form/chart wrapper components
+- Theme tokens and utility modules
+
+It intentionally does **not** yet include complete production workflows or final business logic.
+
+---
+
+## Project Structure
+
+```text
+.
+├── docs/                      # Architecture and schema documentation
+├── public/                    # Static assets
+├── src/                       # Application source code
+├── index.html                 # Vite entry HTML
+├── package.json               # Scripts and dependencies
+├── vite.config.ts             # Vite configuration
+├── tailwind.config.js         # Tailwind configuration
+├── postcss.config.js          # PostCSS configuration
+├── tsconfig.json              # TypeScript base config
+├── tsconfig.app.json          # TS config for app
+└── tsconfig.node.json         # TS config for node/vite tooling
+```
+
+---
+
+## Key Architecture Areas
+
+- **App composition/providers:** `src/app/*`
+- **Routing system:** `src/app/router/*`
+- **Reusable components:** `src/components/*`
+- **Service layer:** `src/services/*`
+- **Types & schemas:** `src/types/*`, `src/schemas/zod/*`
+- **Utilities:** `src/utils/*`
+- **Config/env:** `src/config/*`
+
+Firestore architecture notes are documented in:
+- `docs/architecture/firestore-schema.md`
+
+---
+
+## Getting Started
+
+### Prerequisites
+- Node.js (LTS recommended)
+- npm
+
+### Installation
 
 ```bash
 npm install
@@ -23,69 +87,50 @@ cp .env.example .env
 npm run dev
 ```
 
-## Quality Commands
+---
+
+## Available Scripts
 
 ```bash
-npm run lint
-npm run build
+npm run dev      # Start development server
+npm run build    # Type check + production build
+npm run lint     # Lint source code
+npm run preview  # Preview production build
 ```
 
-## Architecture Coverage
+---
 
-### 1) Folder structure
-- App composition and providers: `src/app/*`
-- Modular route system: `src/app/router/*`
-- Shared components: `src/components/*`
-- Service boundaries: `src/services/*`
-- Shared types and schemas: `src/types/*`, `src/schemas/zod/*`
-- Utilities: `src/utils/*`
-- Config and environment: `src/config/*`
+## Environment Variables
 
-### 2) Routing architecture
-- Constants: `src/app/router/constants.ts`
-- Route tree and layouts: `src/app/router/index.tsx`, `layouts/*`
-- Guards: `ProtectedRoute`, `RoleRoute`
-- Not-found and route stubs included
+Create a `.env` file from `.env.example` and fill required values.
 
-### 3) Firestore schema
-- Multi-college schema and index guidance in `docs/architecture/firestore-schema.md`
-- Collection constants and key strategies in `src/types/firestore.ts`
+```bash
+cp .env.example .env
+```
 
-### 4) TypeScript interfaces
-- Domain, API, Firestore, and UI types in `src/types/*`
-- Includes required entities and guard-friendly unions (`UserRole`, `MealType`)
+Environment validation is handled in:
+- `src/config/env.ts`
 
-### 5) Services structure
-- Firebase config/auth/firestore clients in `src/services/firebase/*`
-- Repository stubs: colleges/menu/tracking/analysis
-- Gemini client + prompts scaffold
-- Mappers and validators with safe result types
+---
 
-### 6) Reusable component hierarchy
-- Common UI: Button, Card, Modal, Loader, EmptyState
-- Form wrappers: FormField, SelectField, DateField
-- Chart wrappers: NutrientRadarChart, WeeklyTrendChart, ScoreGaugeChart
-- Nutrition UI: NutrientChip, GapIndicator, MealTag
-- Layout: AppShell, TopNav, Sidebar
+## Development Notes
 
-### 7) State management strategy
-- Zustand stores for auth, college context, tracking filters, and UI
-- TanStack Query key factory in `src/app/query/queryKeys.ts`
+- Route guards include `ProtectedRoute` and `RoleRoute`.
+- State strategy uses **Zustand** (local/global app state) + **TanStack Query** (server-state patterns).
+- Theme supports tokenized styling and is structured for light/dark/high-contrast readiness.
+- Utility modules include date helpers, nutrition aggregation, ranking/score scaffolds, and validation helpers.
 
-### 8) Theme system
-- Tailwind + CSS variable tokens in `src/app/styles/tokens.css`
-- Light, dark, and high-contrast ready themes
-- Motion tokens in `src/config/theme.ts`
+---
 
-### 9) Utility structure
-- Date helpers, nutrition aggregation, score and ranking scaffolds
-- Role guard and error helper modules
-- Zod schema stubs for runtime validation
+## Contributing
 
-### 10) Environment variable structure
-- `.env.example` + typed validation in `src/config/env.ts`
-- Developer-friendly startup validation for required variables
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Open a pull request
 
-## Notes
+---
 
-This scaffold intentionally avoids implementing production pages and business workflows. It is designed to be an extensible foundation for future feature development.
+## License
+
+No license file is currently defined in this repository.
