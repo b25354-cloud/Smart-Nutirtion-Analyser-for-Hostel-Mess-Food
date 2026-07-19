@@ -158,8 +158,6 @@ Environment validation is handled in:
 ---
 
 ## 🗺️ Roadmap
-
-- [ ] Wearable integration (Google Fit / Apple Health)
 - [ ] Dietary alerts (allergens + preference conflicts such as vegan/lactose-free)
 - [ ] Admin dashboard with anonymized aggregate nutrition insights
 - [ ] Offline/PWA capability for low-connectivity logging
