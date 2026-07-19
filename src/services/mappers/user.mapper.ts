@@ -1,12 +1,11 @@
-import type { User } from 'firebase/auth';
-import type { UserProfile } from '@/types';
+import type { User } from "firebase/auth";
+import type { UserProfile } from "@/types";
 
 export const mapFirebaseUserToProfile = (user: User): UserProfile => ({
   id: user.uid,
-  email: user.email,
-  displayName: user.displayName,
-  instituteId: 'iit_mandi',
-  role: 'student',
+  name: user.displayName ?? "",
+  rollNo: "",
+  email: user.email ?? "",
   createdAt: new Date().toISOString(),
   updatedAt: new Date().toISOString(),
 });

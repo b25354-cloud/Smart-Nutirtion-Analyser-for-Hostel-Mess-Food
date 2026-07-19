@@ -2,7 +2,6 @@ interface MealTimelineProps {
   meals: {
     meal?: string;
     mealType?: string;
-    calories?: number;
   }[];
 }
 
@@ -99,10 +98,8 @@ export default function MealTimeline({
 
                 {completed ? (
                   <div className="mt-2 text-sm text-gray-600">
-
-                    Calories:{" "}
                     <span className="font-semibold">
-                      {loggedMeal.calories?.toFixed(0) ?? 0} kcal
+                  
                     </span>
 
                   </div>

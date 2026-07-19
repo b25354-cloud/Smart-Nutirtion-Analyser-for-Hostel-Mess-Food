@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "@/context/AuthContext";
 import { getWeeklyMealLogs } from "@/services/firebase/tracking";
-import { calculateDailyNutrition } from "@/utils/dashboardCalculator";
 import {
   calculateRemainingNutrition,
   calculateNutritionScore,
@@ -117,16 +116,6 @@ async function loadDashboard() {
  
   const uniqueMeals = Array.from(new Set(logs.map((item: any) => item.mealType || item.meal)));
   const mealCount = uniqueMeals.length;
-
-  const getCaloriesForMeal = (mealType: string) => {
-  return logs
-    .filter((item: any) => item.mealType === mealType)
-    .reduce((sum: number, item: any) => {
-      const f = item.food || {};
-      const s = item.serving || 1;
-      return sum + ((f.calories || f.calories_kcal || 0) * s);
-    }, 0);
-};
 
   return (
     <div className="max-w-7xl mx-auto p-8 space-y-8">

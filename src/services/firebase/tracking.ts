@@ -1,4 +1,4 @@
-import { collection, doc, setDoc, query, where, getDocs, orderBy, limit } from 'firebase/firestore';
+import { collection, doc, setDoc, query, where, getDocs } from 'firebase/firestore';
 import { firestoreDb as db } from './config';
 
 export interface TrackedMeal {
