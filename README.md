@@ -4,7 +4,7 @@ A TypeScript-first React application scaffold for analyzing hostel/mess food nut
 This repository currently provides architecture, routing, services, state management, and UI foundations for future feature development.
 
 ## Live Demo
-[https://smart-nutirtion-analyser-for-hostel.vercel.app](https://smart-nutirtion-analyser-for-hostel.vercel.app)
+[https://smart-nutirtion-analyser-for-hostel.vercel.app](https://smart-nutirtion-analyser-for-hostel-flame.vercel.app/)
 
 ---
 
